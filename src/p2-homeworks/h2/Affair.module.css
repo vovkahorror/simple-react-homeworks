@@ -1,19 +1,44 @@
-.high,
-.middle,
-.low {
+.affair {
+  position: relative;
   display: flex;
-  gap: 10px;
-  background: rgba(0, 0, 0, 0.5);
+  justify-content: space-between;
+  border-radius: 10px;
+  color: white;
+  font-size: 20px;
+}
+
+.affair * {
+  padding: 5px;
 }
 
 .high {
-  color: green;
+  background: green;
 }
 
 .middle {
-  color: yellow;
+  background: orange;
 }
 
 .low {
-  color: red;
+  background: red;
+}
+
+.name {
+  flex-grow: 1;
+  text-align: center;
+  font-weight: 700;
+}
+
+.priority {
+  position: absolute;
+  top: 0;
+  left: 2px;
+  font-size: 12px;
+}
+
+.button {
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
 }

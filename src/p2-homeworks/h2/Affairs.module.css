@@ -1,0 +1,35 @@
+.affairs {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 20%;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.buttons * {
+  flex-grow: 1;
+  padding: 5px;
+  background: gray;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+}
+
+.high {
+  background: green;
+}
+
+.middle {
+  background: orange;
+}
+
+.low {
+  background: red;
+}
