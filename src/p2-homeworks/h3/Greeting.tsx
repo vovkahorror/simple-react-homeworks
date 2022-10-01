@@ -1,28 +1,32 @@
-import React from 'react'
-import s from './Greeting.module.css'
+import React, {ChangeEvent, KeyboardEvent} from 'react';
+import s from './Greeting.module.css';
 
 type GreetingPropsType = {
-    name: any // need to fix any
-    setNameCallback: any // need to fix any
-    addUser: any // need to fix any
-    error: any // need to fix any
-    totalUsers: any // need to fix any
+    name: string;
+    setNameCallback: (e: ChangeEvent<HTMLInputElement>) => void;
+    addUser: () => void;
+    error: string;
+    totalUsers: number;
 }
 
 // презентационная компонента (для верстальщика)
 const Greeting: React.FC<GreetingPropsType> = (
-    {name, setNameCallback, addUser, error, totalUsers} // деструктуризация пропсов
+    {name, setNameCallback, addUser, error, totalUsers}, // деструктуризация пропсов
 ) => {
-    const inputClass = s.error // need to fix with (?:)
+    const inputClass = (error) ? s.input_error : (name) ? s.input_correctly : s.input_default;
+    const onDownEnter = (e: KeyboardEvent<HTMLInputElement>) => e.key === 'Enter' && addUser();
 
     return (
-        <div>
-            <input value={name} onChange={setNameCallback} className={inputClass}/>
-            <span>{error}</span>
-            <button onClick={addUser}>add</button>
-            <span>{totalUsers}</span>
+        <div className={s.greeting}>
+            <div className={s.input__wrapper}>
+                <input value={name} onChange={setNameCallback} onKeyDown={onDownEnter}
+                       className={`${s.input} ${inputClass}`} placeholder={'Enter your name'}/>
+                <span className={s.error}>{error}</span>
+            </div>
+            <button onClick={addUser} className={s.button}>add</button>
+            <span className={s.users}>{totalUsers}</span>
         </div>
-    )
-}
+    );
+};
 
-export default Greeting
+export default Greeting;

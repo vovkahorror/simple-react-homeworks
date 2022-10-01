@@ -3,10 +3,10 @@
 }
 
 .errorInput {
-    border: 3px solid lime;
-    background: red;
+  border: 3px solid lime;
+  background: red;
 }
 
-.error {
-    color: red;
+.input_error {
+  color: red;
 }

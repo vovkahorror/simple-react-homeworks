@@ -1,9 +1,10 @@
-import React, {useState} from 'react'
-import Greeting from './Greeting'
+import React, {ChangeEvent, useState} from 'react';
+import Greeting from './Greeting';
+import {UserType} from "./HW3";
 
 type GreetingContainerPropsType = {
-    users: any // need to fix any
-    addUserCallback: any // need to fix any
+    users: Array<UserType>;
+    addUserCallback: (name: string) => void;
 }
 
 // более простой и понятный для новичков
@@ -12,17 +13,30 @@ type GreetingContainerPropsType = {
 // более современный и удобный для про :)
 // уровень локальной логики
 const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUserCallback}) => { // деструктуризация пропсов
-    const [name, setName] = useState<any>('') // need to fix any
-    const [error, setError] = useState<any>('') // need to fix any
+    const [name, setName] = useState<string>('');
+    const [error, setError] = useState<string>('');
 
-    const setNameCallback = (e: any) => { // need to fix any
-        setName('') // need to fix
-    }
+    const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => {
+        if (e.currentTarget.value.trim().length) {
+            setName(e.currentTarget.value);
+            setError('');
+        }
+    };
+
     const addUser = () => {
-        alert(`Hello  !`) // need to fix
-    }
+        const trimmedName = name.trim();
 
-    const totalUsers = 0 // need to fix
+        if (trimmedName) {
+            alert(`Hello  ${trimmedName}!`);
+            addUserCallback(trimmedName);
+            setName('');
+            setError('');
+        } else {
+            setError('name is require');
+        }
+    };
+
+    const totalUsers = users.length;
 
     return (
         <Greeting
@@ -32,7 +46,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
             error={error}
             totalUsers={totalUsers}
         />
-    )
-}
+    );
+};
 
-export default GreetingContainer
+export default GreetingContainer;
