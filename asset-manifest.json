@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.css": "/simple-react-homeworks/static/css/main.039f7eb6.css",
-    "main.js": "/simple-react-homeworks/static/js/main.c9ad907b.js",
+    "main.css": "/simple-react-homeworks/static/css/main.5797352c.css",
+    "main.js": "/simple-react-homeworks/static/js/main.da3d2974.js",
+    "static/media/404.svg": "/simple-react-homeworks/static/media/404.9ec31c0ba8d95b0480272e46af98c955.svg",
     "index.html": "/simple-react-homeworks/index.html",
-    "main.039f7eb6.css.map": "/simple-react-homeworks/static/css/main.039f7eb6.css.map",
-    "main.c9ad907b.js.map": "/simple-react-homeworks/static/js/main.c9ad907b.js.map"
+    "static/media/burger.svg": "/simple-react-homeworks/static/media/burger.700e416f7bfe3697f96b36c778d25355.svg",
+    "main.5797352c.css.map": "/simple-react-homeworks/static/css/main.5797352c.css.map",
+    "main.da3d2974.js.map": "/simple-react-homeworks/static/js/main.da3d2974.js.map"
   },
   "entrypoints": [
-    "static/css/main.039f7eb6.css",
-    "static/js/main.c9ad907b.js"
+    "static/css/main.5797352c.css",
+    "static/js/main.da3d2974.js"
   ]
 }
