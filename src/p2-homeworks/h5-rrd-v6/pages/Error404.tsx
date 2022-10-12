@@ -1,13 +1,13 @@
-import React from 'react'
+import React from 'react';
+import errorImg from './404.svg';
+import styles from './Error404.module.css';
 
 function Error404() {
     return (
-        <div>
-            <div>404</div>
-            <div>Page not found!</div>
-            <div>—ฅ/ᐠ.̫ .ᐟ\ฅ—</div>
+        <div className={styles.wrapper}>
+            <img src={errorImg} alt=""/>
         </div>
-    )
+    );
 }
 
-export default Error404
+export default Error404;

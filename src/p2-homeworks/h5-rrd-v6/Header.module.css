@@ -1,0 +1,57 @@
+.burger img {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 3;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.nav {
+  position: fixed;
+  top: 40%;
+  right: -50%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  height: 100%;
+  text-align: right;
+  transition: 0.3s;
+}
+
+.open {
+  right: 20px;
+}
+
+.nav a {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 27px;
+  text-decoration: none;
+  color: #000000;
+}
+
+.nav a:hover {
+  color: #ffffff;
+}
+
+.nav a.active {
+  text-decoration: underline;
+  color: #0059B2;
+}
+
+.background {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 150%;
+  height: 150%;
+  background: #000000;
+  opacity: 0.3;
+}
